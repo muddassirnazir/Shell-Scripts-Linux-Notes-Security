@@ -1,0 +1,15 @@
+Regular Expressions :
+
+1. Basic Engine
+2. Expanded Engine
+
+
+eg. grep r.j /file will search for expressions with r and j with one character  in between
+
+grep ^r /filename  : find expr. starting with r
+grep j$ /filename  : find expr. ending with j
+
+Modifiers : *, ?, +, {range}
+
+
+

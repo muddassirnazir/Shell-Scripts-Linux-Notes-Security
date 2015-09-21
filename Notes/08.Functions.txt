@@ -1,0 +1,85 @@
+Usings functions in Shell Scripting
+
+Syntax :  function_name()
+	  {
+		//function body
+          }
+
+eg. user_check()
+	{
+	read -p "Enter user name" a 
+	id $a $> /dev/null
+	if [ "$?" == 0 ]
+	then 
+	echo "User exists"
+	else
+	echo "User doesn't exists"
+	fi
+	}
+
+
+use local when declaring a variable inside a function so that it won't change the predefined variables.
+
+eg. val=x 
+    fun()
+    {
+     val=y
+    }
+
+This will change the value of val to y for further use.
+
+but doing this 
+ val=x
+ fun()
+ {
+ local val=y
+ }
+
+This value of val will remain x outside the function.
+
+
+Passing arg in function:
+
+add()
+{
+ expr $1 + $2
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+

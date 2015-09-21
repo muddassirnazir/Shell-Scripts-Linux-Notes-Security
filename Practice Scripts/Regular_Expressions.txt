@@ -1,0 +1,161 @@
+^ –Caret/Power symbol to match a starting at the beginning of line.
+
+$ –To match end of the line
+
+* –0 or more occurrence of previous character.
+
+. –To match any character
+
+[] –Range of character
+
+[^char] –negate of occurrence of a character set
+
+<word> –Actual word finding
+
+–Escape character
+
+
+
+1. ^ Regular Expression
+
+Example 1: Find all the files in a given directory
+
+ls -l | grep ^-
+
+As you are aware that the first character in ls -l output, - is for regular files and d for directories in a given folder. Let us see what ^- indicates. The ^ symbol is for matching line starting, ^- indicates what ever lines starts with -, just display them. Which indicates a regular file in Linux/Unix.
+
+If we want to find all the directories in a folder use grep ^d option along ls -l as shown below
+
+ls -l | grep ^d
+
+How about character files and block files?
+
+ls -l | grep ^c
+
+ls -l | grep ^b
+
+We can even find the lines which are commented using ^ operator with below example
+
+grep ‘^#’ filename
+
+How about finding lines in a file which starts with ‘abc’
+
+grep ‘^abc’ filename
+
+We can have number of examples with this ^ option.
+
+
+
+2. $ Regular Expression
+Example 2: Match all the files which ends with sh
+
+ls -l | grep sh$
+
+As $ indicates end of the line, the above command will list all the files whose names end with sh.
+
+how about finding lines in a file which ends with dead
+
+grep ‘dead$’ filename
+
+How about finding empty lines in a file?
+
+grep ‘^$’ filename
+
+
+
+
+3. * Regular Expression
+Example 3: Match all files which have a word twt, twet, tweet etc in the file name.
+
+ls -l | grep ‘twe*t’
+
+How about searching for apple word which was spelled wrong in a given file where apple is misspelled as ale, aple, appple, apppple, apppppple etc. To find all patterns
+
+grep ‘ap*le’ filename
+
+Readers should observe that the above pattern will match even ale word as * indicates 0 or more of previous character occurrence.
+
+
+
+
+4. . Regular Expression
+Example 4: Filter a file which contains any single character between t and t in a file name.
+
+ls -l | grep ‘t.t’
+
+Here . will match any single character. It can match tat, t3t, t.t, t&t etc any single character between t and t letters.
+
+How about finding all the file names which starts with a and end with x using regular expressions?
+
+ls -l | grep ‘a.*x’
+
+The above .* indicates any number of characters
+
+
+Note: .* in this combination . indicates any character and it repeated(*) 0 or more number of times.
+Suppose you have files as..
+awx
+awex
+aweex
+awasdfx
+a35dfetrx
+etc.. it will find all the files/folders which start with a and ends with x in our example.
+
+
+
+
+5. [] Square braces/Brackets Regular Expression
+Example 5: Find all the files which contains a number in the file name between a and x
+
+ls -l | grep ‘a[0-9]x’
+
+This will find all the files which is
+a0xsdf
+asda1xsdfas
+..
+..
+asdfdsara9xsdf
+etc.
+
+So where ever it finds a number it will try to match that number.
+
+Some of the range operator examples for  you.
+
+[a-z] –Match’s any single char between a to z.
+[A-Z] –Match’s any single char between a to z.
+[0-9] –Match’s any single char between 0 to 9.
+[a-zA-Z0-9] – Match’s any single character either a to z or A to Z or 0 to 9
+[!@#$%^] — Match’s any ! or @ or # or $ or % or ^ character.
+You just have to think what you want match and keep those character in the braces/Brackets.
+
+
+
+6. [^char] Regular Expression
+Example6: Match all the file names except a or b or c in its filenames
+
+ls | grep  ‘[^abc]‘
+
+This will give output all the file names except files which contain a or b or c.
+
+
+
+7. <word> Regular expression
+Example7: Search for a word abc, for example I should not get abcxyz or readabc in my output.
+
+grep ‘<abc>’ filename
+
+
+
+
+8. Escape Regular Expression 
+Example 8: Find files which contain [ in its name, as [ is a special charter we have to escape it
+
+grep "[" filename
+
+or
+
+grep '[[]‘ filename
+
+Note: If you observe [] is used to negate the meaning of [ regular expressions, so if you want to find any specail char keep them in [] so that it will not be treated as special char.
+
+Note: No need to use -E to use these regular expressions with grep. We have egrep and fgrep which are equal to “grep -E”. I suggest you just concentrate on grep to complete your work, don’t go for other commands if grep is there to resolve your issues.

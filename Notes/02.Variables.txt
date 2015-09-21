@@ -1,0 +1,30 @@
+Two type : Sys defined
+		   User Defined		
+No spaces allowed in declaration.
+Can't start with numeric values.
+
+Variable States : set , unset, null
+
+
+Set : defining a varaible : e.g : a="grras" will assign value for a
+unset : e.g. : unset a will remove a="grras" 
+null : e.g. : a= 
+
+
+To use a variable within subshells, use: export a="grras"
+To permanently declare a variable untill the shell is killed : readonly a="grras"
+
+To see a list a exported variables : $export
+
+
+
+Some System Variables : 
+
+1) echo $$ will print pid of the current bash.
+2) echo $? will show the exit status of the last command
+3) IFS : Intermediate Filed Separator : default values are space, tab and newline
+
+
+
+
+

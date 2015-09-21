@@ -1,0 +1,13 @@
+e.g. rajat[0]=grras
+     rajat[1]=linux
+     rajat[2]=training
+
+echo ${rajat[*]}
+or 
+echo $rajat[@]
+
+
+e.g. rajat=(val1, val2, val3, val4)
+
+
+

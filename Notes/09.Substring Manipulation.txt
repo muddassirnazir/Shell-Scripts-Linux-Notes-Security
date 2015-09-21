@@ -1,0 +1,8 @@
+To measure length of a string : echo ${#a} where a=something. So length of a is equal to 9.
+
+To find and replace something in a string : echo ${a/something/anything} will replace something with anything. So a is now equal to anything.
+
+xxx
+
+
+

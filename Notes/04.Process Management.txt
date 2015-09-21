@@ -1,0 +1,18 @@
+ps
+pgrep : to grep a particular process
+
+kill : list the signals --> $kill -l
+        to kill any process and kill as many process it can related to it we use $kill -9
+
+pkill : 
+
+
+JOBS : There are two types : 
+          1) Foreground   2) Background
+
+To send a process to background(it will put it in a stopped condition) :  ctrl + z
+To check background processes : jobs
+To put a task to background in running conditon : fg
+
+
+

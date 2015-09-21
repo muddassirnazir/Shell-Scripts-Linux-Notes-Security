@@ -1,0 +1,20 @@
+Double Quotes : " "  Also known as weak quotes as special characters work inside it.
+Single Quotes : ' '     Also knwon as strong quotes as it takes anything inside it as a single string.
+                                   Special characters don't work in Single Quotes.
+
+
+Back Tick : ``  In a back tick there is always a command or there will be a error in the script.
+
+For example, in Red Hat : rpm -qf `which ftp`
+First it will find the path of ftp command and then rpm -qf will tell you from which package ftp came from.
+
+sort -t: -k3 -n | cut -d: -f1,3 --output-delimiter=""
+
+
+find at maxdepth
+
+
+
+
+
+

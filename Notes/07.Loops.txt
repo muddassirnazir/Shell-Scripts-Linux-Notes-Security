@@ -1,0 +1,12 @@
+Two types of loop :
+Conditional Loop : do while loop
+Unconditional Loop : for loop
+
+1. FOR LOOP
+    for i in value
+    do 
+    echo $i
+    done
+
+
+q :random passwd generation and save them in a variable and store the values in  a file.

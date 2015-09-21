@@ -1,0 +1,26 @@
+Replacing Text or text patterns in vim :
+
+:/s/Foo/Bar   - find Foo and replace with Bar
+:/s/Foo/Bar/g - ...all instances on line
+:%s/Foo/Bar   - Apply to whole file
+
+Recording Text : 
+It is helpful in case you wrote down few pages and then you mistakenly delete all the text. If you had recorded, you would have it Playback to bring back the deleted text.
+
+q.  - Start Recording
+a.  - Playback
+q   - Stop Playback
+@@  - Repeat
+
+To change the syntax of a file :
+
+:syntax enable 
+:set filetype
+
+c cpp make perl python
+
+Note: Chose only one file type.
+
+
+
+

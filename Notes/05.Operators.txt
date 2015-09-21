@@ -1,0 +1,32 @@
+Arithmetic Operators : + , - , * , % , **
+
+To perform an operation : 
+1) let c=$a+$b , where the spaces has to taken care of or else syntax error
+2) c=`expr $a + $b`  where c will hold the value for operation. 
+    I case of a special characeter like   * we use \ to remove ambiguity for the bash interpreter.
+3) c=$(($a+$b)) where c will hold the value for operation.
+
+Comparison Operators : ==  : -eq
+					   <    : -lt
+					   >    : -gt
+					   <= : -le
+					   >= : -ge
+					   !=   : -ne
+
+set -x will start a debug mode on a script. To stop it at a particular section set +x
+
+Logical Operators : AND : &&
+				 OR    : ||
+				 NOT  : 
+
+sleep seconds where seconds has a value. If we put this line in a script then it will hold the shell for value seconds.
+
+seq : printing a sequence of numbers
+
+Exponential Operators : ** eg. 3**2 will give 9 or 3**3 will give 27
+
+Increment Operator : e.g. if var=10; var+=5 will give 15
+
+
+
+

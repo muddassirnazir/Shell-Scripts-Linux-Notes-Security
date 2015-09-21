@@ -1,0 +1,42 @@
+Seven Types of fundamental files in Linux : 
+1. Regular Files : - 
+2. Directory Files : d
+3. Links (Soft Links only) : l
+4. Character Special Files : Devices are read char by char. : c
+5. Block Special Files : Devices are read block by block. : b
+6. Pipe type files : p
+7. Socket type files : These files are used in Socket Programming : s
+
+
+[ -e /file ]  : To check if the file exists
+[-a /file]    : To check if the file exists
+[ -f /file ]   : To check if it is a file
+[ -r /file ]   : To check if the file has read permission
+[ -w /file ]  : To check if the file has write permission
+[ -x /file ]   : To check if the looged in user has execute permission on the file or directory.
+[ -O /file ]  : To check if the logged in user owns the files or not
+[ -s /file ]   : To check if the filesize if greater than zero.
+[ -d /file ]   : To check if file is a directory
+[ -b /file ]   : To check if file is block special
+[ -c /file ]   : To check if the file is character special
+[-p /file ]    : To check if the file is pipe type files
+[-h /file ]    : To checksymbolic links
+[-S /file ]    : To check if it is a socket type file
+[ -g /file ]   : To check if the file has a guid on it.
+[-u /file ]    : To check if the file has suid on it
+[ -k /file ]   : To check if the file has sticky bit.
+[ -N /file]   : To check if the file has been modified the value will be true
+[ -z /file]    : For checking NULL values of a variable 
+Use echo $? to check the stat of the any of the above comparisons.
+if echo $? gives 0 then comparison is true, else comparison false
+
+a=$((b=3+4 , 4+5)) && echo $a : When sepaarated by commas the value in output will be last value.
+
+
+
+
+
+
+
+
+
