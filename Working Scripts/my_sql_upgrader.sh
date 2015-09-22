@@ -119,7 +119,7 @@ fi
 /bin/mv -f /root/libmysqlclient.so.$lib.0.0 $libdir
 /bin/mv -f /root/libmysqlclient_r.so.$lib.0.0 $libdir
 
-/bin/ln -sf $libdir/libmysqlclient_r.so.$lib.0.0 $libdir/libmysqlclient_r.so.$lib 
+/bin/ln -sf $libdir/libmysqlclient_r.so.$lib.0.0 $libdir/libmysqlclient_r.so.$lib
 /bin/ln -sf $libdir/libmysqlclient.so.$lib.0.0 $libdir/libmysqlclient.so.$lib
 
 if [ "$2" == "--runeasy" ];then
@@ -127,4 +127,3 @@ if [ "$2" == "--runeasy" ];then
 else
     echo "Upgrade complete - please run EasyApache"
 fi
-

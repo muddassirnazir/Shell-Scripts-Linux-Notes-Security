@@ -1,3 +1,4 @@
+#!/bin/bash
 echo enter no.
 read n
 
@@ -10,8 +11,8 @@ rev=`expr $rev \* 10 + $rem`
 n=`expr $n / 10`
 done
 if test $n1 -ne $rev
-then 
+then
 echo no. is not palindrome
-else 
-echo no. is palindrome 
+else
+echo no. is palindrome
 fi

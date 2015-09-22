@@ -1,4 +1,5 @@
 #!/bin/bash
+
 loadarray()
 {
  i=0
@@ -11,4 +12,3 @@ loadarray()
 loadarray $1
 echo ${#file[*]}
 echo ${file[*]}
-

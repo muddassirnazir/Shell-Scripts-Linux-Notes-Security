@@ -1,3 +1,4 @@
+#!/bin/bash
 echo enter numbers
 read a
 b=1
@@ -7,4 +8,3 @@ c=`expr $a \* $b`
 echo $a .. $b za = $c
 b=`expr $b + 1`
 done
-

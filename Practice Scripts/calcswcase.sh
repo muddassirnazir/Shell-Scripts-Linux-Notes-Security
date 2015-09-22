@@ -1,4 +1,6 @@
-echo enter no.1 
+#!/bin/bash
+
+echo enter no.1
 read a
 echo enter no.2
 read b
@@ -14,4 +16,4 @@ case $ch in
 3) echo mult is  `expr $a \* $b`;;
 4) echo `expr $a / $b`;;
 *) echo wrong choice;;
-esac 
+esac

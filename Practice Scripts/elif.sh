@@ -4,7 +4,7 @@ read user
 a=`cut -d: -f1 /etc/passwd | grep $user`
 
 if [ $user == $a ]
-then 
+then
 echo "$user is present"
 else
 echo "$user is present"
