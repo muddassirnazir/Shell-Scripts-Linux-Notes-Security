@@ -1,0 +1,275 @@
+cPanel / WHM Directory Structure and Scripts
+
+#Apache
+
+Configuration files (httpd.conf, php.conf) - /usr/local/apache/conf
+Apache binaries (httpd, apachectl, apxs) - /usr/local/apache/bin
+CGI files - /usr/local/apache/cgi-bin
+Domain access and stat log files (for all domains) - /usr/local/apache/domlogs
+Default Apache DocumentRoot location - /usr/local/apache/htdocs
+Header files - /usr/local/apache/include
+Apache logs - /usr/local/apache/logs:
+access_log (all http requests)
+error_log (all Apache errors)
+suexec_log (all suEXEC transactions and errors are logged here)
+Apache manual pages - /usr/local/apache/man
+Icon files (png, gif files) - /usr/local/apache/icons
+Shared object (.so) files - /usr/local/apache/modules
+Apache modules - /opt
+Init script - /usr/local/apache/bin/apachectl (or /etc/rc.d/init.d/httpd)
+cPanel script to restart Apache - /scripts/restartsrv httpd or /scripts/restartsrv apache
+
+#EximTop
+
+Conf - /etc/exim.conf (Exim's main configuration file. It is recommended that you do not edit this manually.)
+List of domains allowed to relay/receive mail - /etc/localdomains
+Log - /var/log/exim_mainlog (Incoming/Outgoing mails are logged here)
+Log - /var/log/exim_rejectlog - (Exim rejected mails are reported here)
+Log - /var/log/exim_paniclog - (Exim errors are logged here)
+Mail queue - /var/spool/exim/input
+Email forwarders and Catchall address file - /etc/valiases/<domain_name>
+Email filters file - /etc/vfilters/<domain_name>
+POP user authentication file - /home/<username>/etc/<domain_name>/passwd
+Catchall inbox - /home/<username>/mail/new
+POP user inbox - /home/<username>/mail/<domain_name>/<pop_username>/new
+POP user spambox - /home/<username>/mail/<domain_name>/<pop_username>/spam
+Program - /usr/sbin/exim (suid - -rwsr-xr-x 1 root root)
+Init Script - /etc/rc.d/init.d/exim
+cPanel script to restart Exim - /scripts/restartsrv exim
+
+
+#ProFTPD
+
+Conf - /etc/proftpd.conf
+Program - /usr/sbin/proftpd
+Init Script - /etc/rc.d/init.d/proftpd
+cPanel script to restart ProFTP - /scripts/restartsrv proftpd
+Accounts file - /etc/proftpd/<username> (all ftp accounts are stored here)
+Log - /var/log/messages, /var/log/xferlog
+
+#Pure-FTPD
+
+Conf - /etc/pure-ftpd.conf
+Program - /usr/sbin/pure-ftpd
+Init script - /etc/rc.d/init.d/pure-ftpd
+cPanel script to restart Pure-FTP - /scripts/restartsrv pureftpd
+Accounts file - /etc/proftpd/<username> (all ftp accounts are stored here)
+Log - /var/log/messages
+Anonymous ftp document root - /etc/pure-ftpd/<ip_address>
+
+
+#MySQL
+
+Conf - /etc/my.cnf (includes global values for the server), /root/.my.cnf (addendum to the main my.cnf file)
+Program - /usr/sbin/mysqld (Daemon), /usr/bin/mysqld_safe (Startup script)
+Init script : /etc/rc.d/init.d/mysql
+cPanel script to restart MySQL - /scripts/restartsrv mysql
+Log - /var/lib/mysql/<hostname>.err (Startup errors)
+Data directory - /var/lib/mysql (All databases are stored here)
+Database naming convention - <username>_<dbname> (Example: testcp_dbmysql)
+Socket file - /var/lib/mysql/mysql.sock, /tmp/mysql.sock
+
+
+#PostgreSQL
+
+Conf - /var/lib/pgsql/data/postgresql.conf and /var/lib/pgsql/data/pg_hba.conf (Client authentication)
+cPanel script to restart PostgreSQL - /scripts/restartsrv postgresql
+Log - /var/lib/pgsql
+Data Directory - /var/lib/pgsql/data (all databases are stored here)
+
+
+#SSHD
+
+Conf - /etc/ssh/sshd_config
+Program - /usr/local/sbin/sshd
+Init script - /etc/rc.d/init.d/sshd
+cPanel script to restart SSHD - /scripts/restartsrv sshd
+Log - /var/log/secure, /var/log/messages or /var/log/auth
+
+#Perl
+
+Program - /usr/local/bin/perl (Symlink: /usr/bin/perl)
+Directory - /usr/lib/perl5 (installed via yum or up2date) or /usr/local/lib/perl5 (installed by the Perl installer)
+Version - /usr/bin/perl -v or /usr/local/bin/perl -v
+Module Installer - /scripts/perlinstaller <module_name>
+Build - /home/.cpan and /home/.cpcpan (Perl module sources and information for connection mirrors)
+
+#System PHP
+
+Program - /usr/local/bin/php, /usr/bin/php
+ini file - /usr/local/lib/php.ini
+Recompile PHP using EasyApache - /scripts/easyapache (/usr/local/cpanel/scripts/easyapache)
+
+#Internal PHP
+
+Program - /usr/local/cpanel/3rdparty/bin/php, /var/cpanel/3rdparty/bin/php
+ini file - /usr/local/cpanel/3rdparty/etc/php.ini
+
+#Named (BIND)
+
+Conf - /etc/named.conf
+Program - /usr/sbin/named
+Init script - /etc/rc.d/init.d/named
+cPanel script to restart named - /scripts/restartsrv named
+Log - /var/log/messages, /var/named/data/named.run (Debug information is written to this file)
+Zone files - /var/named/
+
+#NSD (Alternate DNS option)
+
+Conf - /etc/nsd/nsd.conf
+Program - /usr/sbin/nsd
+Init script - /etc/rc.d/init.d/nsd
+Log - /var/log/messages
+Zone files - /var/named
+
+#Dovecot
+
+Conf - /etc/dovecot.conf
+Program - /usr/sbin/dovecot
+Init script: /etc/rc.d/init.d/dovecot
+cPanel script to restart dovecot - /scripts/restartsrv dovecot
+Log - /var/log/maillog
+
+#Courier
+
+Conf - /usr/local/libexec/courier-imap
+Program - /usr/lib/courier-imap/libexec/couriertcpd
+Init script - /etc/rc.d/init.d/courier
+cPanel script to restart Courier- /scripts/restartsrv courier
+Log - /var/log/maillog
+
+#Tomcat
+
+Tomcat 5.5 Conf - /usr/local/jakarta/tomcat/conf/server.xml
+Tomcat 7 Conf - /usr/local/easy/share/easy-tomcat/conf/
+Tomcat 5.5 Binary Distribution - /usr/local/jakarta/apache-tomcat-${VERSION} (/usr/local/jakarta/tomcat is a symlink to this directory)
+Tomcat 7 Binary Distribution - /usr/local/easy/share/easy-tomcat7
+Java Development Kit - /usr/local/jdk/ (Also known as $JAVA_HOME. This directory contains the Java Runtime Environment (JRE).)
+Enabling Tomcat servlets for a site - /scripts/addservlets --domain=example.com
+Removing Tomcat servlets from a site - /scripts/remservlets --domain=example.com
+Apache module configuration for jk connector - /usr/local/apache/conf/jk.conf
+Start - /usr/sbin/stoptomcat
+Stop - /usr/sbin/starttomcat
+Restart - /usr/sbin/restartsrv_tomcat
+cPanel script to restart Tomcat - /scripts/restartsrv tomcat
+Log Tomcat 5.5 - /usr/local/jakarta/tomcat/logs/catalina.out (Activity log) & catalina.err (Error log), /usr/local/apache/logs/mod_jk.log (for jk connector)
+Log Tomcat 7 - /var/log/easy-tomcat7
+
+
+#cPanel installation directory structure
+
+The below directories can be located under /usr/local/cpanel:
+
+/3rdparty - Tools like fantastico, mailman files are located here
+/addons - Advanced GuestBook, phpBB, etc.
+/base - phpMyAdmin, Squirrelmail, Skins, webmail, etc.
+/bin - cPanel binaries
+/cgi-sys - CGI files like cgiemail, formmail.cgi, formmail.pl, etc.
+/logs - cPanel access_log, error_log, license_log, stats_log
+/whostmgr - WHM related files
+/base/frontend - cPanel theme files
+/perl - Internal Perl modules for compiled binaries
+/etc/init - init files for cPanel services
+
+#Common cPanel scripts
+
+Listed below are common cPanel scripts. These can be located under /scripts:
+
+adddns - Add a DNS zone
+addpop - Add a POP account
+addservlets - Add JSP support to a domain (requires Tomcat)
+adduser - Add an user to the system
+apachelimits - Calculates memory limits for Apache processes then adds to httpd.conf
+biglogcheck - Looks for logs nearing 2 Gigabytes in size
+bsdcryptoinstall - Installs Crypto on FreeBSD
+bsdldconfig - Configures the proper lib directories in FreeBSD
+bsdpkgpingtest - Tests the connection speed for downloading FreeBSD packages
+buildbsdexpect - Install expect on FreeBSD
+buildeximconf - Rebuilds exim.conf
+buildpostgrebsd-dev - Installs postgresql on FreeBSD
+chpass - Change cPanel passwords (does not change all passwords)
+cleandns - Removes domains from named.conf that do not have a Zone
+courierup - Used to update/reinstall Courier
+cpbackup - To backup accounts (if backups enabled) (--force)
+dnscluster - Used to synchronize DNS zones with clustered servers (--help)
+dumpstor - Displays contents of .datastore storable files
+dumpgdbm - Displays contents of .gdbm locale files
+easyapache - Recompile/Upgrade Apache and/or PHP
+editquota - Used to manually set a users quota limit
+ensure_vhost_includes - Ensures users includes are added in httpd.conf
+fixcommonproblems - Fixes Mailbox permissions, Mailman, CGI scripts, ndc and quotas
+fixmailman - Fixes common Mailman issues
+fixndc - Fixes rndc errors with named
+fixquotas - Fixes quota problems
+fullhordereset - Resets Horde database to a fresh one. All previous user data is lost.
+ftpup - Used to Update/Install FTP server (Pure-FTPD or ProFTPD) to latest version
+initquotas - Initializes quotas
+installzendopt - Installs Zend Optimizer (through phpextensionmgr)
+killacct - Terminate an account
+killdns - Removes a DNS Zone
+mailperm - Fixes permission problems with mail directories
+makecpphp - Rebuilds internal PHP from /var/cpanel/easy/apache/profile/makecpphp.profile.yaml
+park - To park a domain (only adds DNS)
+pkgacct - Used to create an account backup
+phpup - Used to update PHP only
+phpextensiomgr - Installs IonCube, Zend Optimizer, SuHosin & eAccelerator
+realchpass - Similar to chpass, changes cPanel password only
+rebuildcpusers - chowns /var/cpanel/users files
+rebuildnamedconf - Rebuilds /etc/named.conf with zones from /var/named/*.db
+restartsrv $servicename - Restart script for services
+restorepkg - Restores an account from a backup/pkgacct file (must be in /home)
+runlogsnow - Update logs of all users
+runweblogs - Update stats for a particular user
+securetmp - Secures /tmp partition with options nosuexec and nosuid
+setupftpserver - Sets which FTP server to install (Pure-FTPD or ProFTPD)
+setupmailserver - Sets which mail service to install (Courier or Dovecot)
+setupnameserver - Sets which DNS service to install (Bind or NSD)
+suspendacct - Suspends an account
+unsuspendacct - Unsuspends a suspended account
+upcp - Updates cPanel to the latest version (--force)
+updatenow - Updates the cPanel scripts
+updateuserdomains - Updates /etc/userdomains entries from /var/cpanel/users
+wwwacct - To create new accounts
+
+#Important cPanel/WHM & Config files
+
+Listed below are important cPanel/WHM & Config files:
+
+/etc/vfilters/domainname - Email filters are set here
+/etc/userdomains - All domains are listed here (addons, parked,subdomains along with their usernames)
+/etc/cpbackup-userskip.conf - To exclude users from backups
+/etc/resolv.conf - Resolvers configuration file (WHM -> Networking Setup -> Resolver Configuration)
+/etc/nameserverips - Name Servers for DNS service (WHM -> DNS Functions -> Nameserver IPs)
+/var/cpanel/resellers - Permissions for Resellers while using addpkg script
+/etc/chkserv.d - All the services managed by Chkservd are stored here as files (WHM -> Service Configuration -> Service Manager)
+/etc/ipaddrpool - Lists the free IP addresses on your server
+/etc/domainips - Dedicated IP addresses assigned to domains
+/etc/ips - Lists IP addresses on the server (WHM -> IP Functions -> Show IP Address Usage)
+/etc/wwwacct.conf - Account creation defaults file in WHM (Basic cPanel/WHM Setup)
+/etc/cpupdate.conf - Update configuration file for cPanel/WHM, Packages installed by cPanel/WHM & Operating System, SpamAssasin rules
+/etc/cpbackup.conf - Backup configuration file
+/var/run/chkservd - WHM -> Server Status -> Service Status
+/var/log/dcpumon - Top log process
+/root/cpanel3-skel - Skeleton directory
+/var/spool/exim/msglog - Email message logs
+/var/spool/cron - Cron jobs are stored here for all users
+/var/cpanel/users - cPanel user file that defines account settings
+/var/cpanel/users.cache - User cache files that are read by cPanel
+/var/cpanel/cpanel.config - cPanel configuration file (WHM -> Server Configuration -> Tweak Settings)
+/var/cpanel/userdata - Defines parked, addon, subdomains as well as VirtualHost
+/var/cpanel/logs - Transfer logs
+/var/cpanel/easy/apache - EasyApache build files/profile
+/var/cpanel/userhomes - Session home for cPanel, Horde, Roundcube, phpmyadmin
+/var/cpanel/serviceauth - chkservd service authentication data
+/var/cpanel/updatelogs - upcp Daily logs
+/var/cpanel/horde - Directory which stores Horde Version, Backups and Logs files
+/var/cpanel/roundcube - Directory which stores RoundCube Version, Backups and Logs files
+/var/cpanel/squirrelmail - Squirrelmail version file is stored here
+/var/cpanel/cpanelsync - DNS Clustering files
+/var/cpanel/bandwidth - This directory includes .rrd files of domains
+/var/cpanel/<reseller_username>.accts - Reseller account file
+/var/cpanel/packages - Hosting packages configuration files are stored here
+/var/cpanel/root.accts - root owned domains are listed in this file
+/var/cpanel/suspended - All suspended accounts are listed here
+/var/cpanel/users - cPanel users file (user account configurations such as - theme, bwlimit, addon, parked, sub-domains, etc.)
+/var/cpanel/zonetemplates - DNS Zone template files are stored here
