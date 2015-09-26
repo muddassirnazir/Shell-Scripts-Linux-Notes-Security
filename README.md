@@ -1,2 +1,3 @@
-# bash_scripts
-bash_scripting practice
+# bash scripts
+
+I am writing some bash scripts, just for some learnings. 
