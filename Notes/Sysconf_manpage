@@ -1,0 +1,58 @@
+NAME
+       sysconf - Get configuration information at runtime
+
+SYNOPSIS
+       #include <unistd.h>
+
+       long sysconf(int name);
+
+DESCRIPTION
+       POSIX  allows  an  application  to  test  at compile or run time
+       whether certain options are supported, or what the value  is  of
+       certain configurable constants or limits.
+
+       At  compile  time  this  is  done by including <unistd.h> and/or
+       <limits.h> and testing the value of certain macros.
+
+       At run time, one can ask for numerical values using the  present
+       function  sysconf().   On  can ask for numerical values that may
+ depend on the file system a file is in using  the  calls  fpath-
+       conf(3)  and  pathconf(3).   One can ask for string values using
+       confstr(3).
+
+       The values obtained from these functions are  system  configura-
+       tion  constants.   They  do  not change during the lifetime of a
+       process.
+
+       For options, typically, there is a constant _POSIX_FOO that  may
+       be defined in <unistd.h>.  If it is undefined, one should ask at
+       run time.  If it is defined to -1, then the option is  not  sup-
+       ported.   If  it  is  defined  to 0, then relevant functions and
+       headers exist, but one has to ask at runtime what degree of sup-
+       port is available.  If it is defined to a value other than -1 or
+       0, then the option is supported.  Usually  the  value  (such  as
+       200112L)  indicates  the  year  and  month of the POSIX revision
+       describing the option.  Glibc uses the value 1 to indicate  sup-
+       port  as  long as the POSIX revision has not been published yet.
+The sysconf() argument will be _SC_FOO.  For a list of  options,
+       see posixoptions(7).
+
+       For  variables  or  limits, typically, there is a constant _FOO,
+       maybe defined in <limits.h>, or  _POSIX_FOO,  maybe  defined  in
+       <unistd.h>.   The  constant  will not be defined if the limit is
+       unspecified.  If the constant is defined, it gives a  guaranteed
+       value,  and  a greater value might actually be supported.  If an
+       application wants to take advantage of values which  may  change
+       between systems, a call to sysconf() can be made.  The sysconf()
+       argument will be _SC_FOO.
+
+
+RETURN VALUE
+       If  name is invalid, -1 is returned, and errno is set to EINVAL.
+       Otherwise, the  value  returned  is  the  value  of  the  system
+       resource  and  errno  is not changed.  In the case of options, a
+       positive value is returned if a queried option is available, and
+       -1  if it is not.  In the case of limits, -1 means that there is
+       no definite limit.
+
+
