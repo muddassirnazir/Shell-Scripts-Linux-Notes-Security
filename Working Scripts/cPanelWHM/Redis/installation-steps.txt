@@ -1,0 +1,36 @@
+cd /usr/local/
+wget http://download.redis.io/releases/redis-2.8.12.tar.gz
+tar -xvzf redis-2.8.12.tar.gz
+cd redis-2.8.12
+make
+cp src/redis-server /usr/local/bin
+cp src/redis-cli /usr/local/bin
+mkdir -p /etc/redis
+mkdir -p /var/redis
+cp redis.conf /etc/redis/redis.conf
+
+#Open /etc/redis/redis.conf using vi edirot and set the values as follows.
+daemonize yes
+port 6379
+bind 127.0.0.1
+dir  /var/redis/
+logfile  /var/log/redis.log
+pidfile  /var/run/redis.pid
+
+#Create a new file as /etc/init.d/redis and write the contents from statup_script
+
+#Make the servive persistent on reboots 
+chkconfig --add redis
+chkconfig redis on
+
+#Now we can manipulate redis using command /etc/init.d/redis start|stop|restart
+#To make sure redis is working, run command “redis-cli ping” from command line. 
+#If you get result “PONG”, that shows redis is working.
+
+#Now install redis PHP extension, using following command.
+pecl install redis
+
+#Now open php.ini ( /usr/local/lib/php.ini on cPanel servers ) file and add the following line to it
+extension=redis.so
+
+#Now restart Apache to apply the changes to php.ini file. 
