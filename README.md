@@ -1,3 +1,3 @@
-# bash scripts
+#Bash Scripts + Some Linux Notes
 
-I am writing some bash scripts, just for some learnings. 
+GNU bash, version 4.3.11(1)-release (x86_64-pc-linux-gnu)
