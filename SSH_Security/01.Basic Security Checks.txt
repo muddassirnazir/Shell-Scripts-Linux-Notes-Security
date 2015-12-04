@@ -1,0 +1,14 @@
+SSH Configuration of Red Hat Enterprise Linux 7 for better security. 
+Do not attempt to implement any of the settings in this guide without first testing them in a non-operational environment. 
+
+1. Strengthen Firewall Configuration if Possible
+2. Allow Only SSH Protocol 2
+3. Set SSH Idle Timeout Interval
+4. Set SSH Client Alive Count
+5. Disable SSH Support for .rhosts Files
+6. Disable Host-Based Authentication
+7. Disable SSH Root Login
+8. Disable SSH Access via Empty Passwords
+9. Enable SSH Warning Banner
+10. Do Not Allow SSH Environment Options
+11. Use Only Approved Ciphers
