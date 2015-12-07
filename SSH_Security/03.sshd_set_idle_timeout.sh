@@ -3,7 +3,7 @@
 #To set an idle timeout interval, edit the following line in /etc/ssh/sshd_config as follows:
 
 #"ClientAliveInterval interval" without quotes and comment at the beginning. 
-The timeout interval is given in seconds. To have a timeout of 15 minutes, set interval to 900.
+#The timeout interval is given in seconds. To have a timeout of 15 minutes, set interval to 900.
 
 #If a shorter timeout has already been set for the login shell, that value will preempt any SSH setting made here. 
 #Keep in mind that some processes may stop SSH from correctly detecting that the user is idle. 
