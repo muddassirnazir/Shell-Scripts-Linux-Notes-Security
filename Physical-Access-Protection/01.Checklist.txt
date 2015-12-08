@@ -1,0 +1,5 @@
+1. Verify /boot/grub2/grub.cfg User Ownership
+2. Verify /boot/grub2/grub.cfg Group Ownership
+3. Verify /boot/grub2/grub.cfg Permissions
+4. Set Boot Loader Password
+5. Require Authentication for Single User Mode
