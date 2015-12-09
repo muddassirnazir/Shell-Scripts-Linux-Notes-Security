@@ -1,0 +1,8 @@
+01.Set Password Retry Prompts Permitted Per-Session
+02.Set Password Strength Minimum Digit Characters
+03.Set Password Strength Minimum Uppercase Characters
+04.Set Password Strength Minimum Special Characters
+05.Set Password Strength Minimum Lowercase Characters
+06.Set Password Strength Minimum Different Characters
+07.Set Deny For Failed Password Attempts
+08.Limit Password Reuse
