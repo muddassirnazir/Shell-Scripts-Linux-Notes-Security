@@ -19,12 +19,12 @@ pidfile  /var/run/redis.pid
 
 #Create a new file as /etc/init.d/redis and write the contents from statup_script
 
-#Make the servive persistent on reboots 
+#Make the servive persistent on reboots
 chkconfig --add redis
 chkconfig redis on
 
 #Now we can manipulate redis using command /etc/init.d/redis start|stop|restart
-#To make sure redis is working, run command “redis-cli ping” from command line. 
+#To make sure redis is working, run command “redis-cli ping” from command line.
 #If you get result “PONG”, that shows redis is working.
 
 #Now install redis PHP extension, using following command.
@@ -33,4 +33,4 @@ pecl install redis
 #Now open php.ini ( /usr/local/lib/php.ini on cPanel servers ) file and add the following line to it
 extension=redis.so
 
-#Now restart Apache to apply the changes to php.ini file. 
+#Now restart Apache to apply the changes to php.ini file.
