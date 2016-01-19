@@ -1,0 +1,37 @@
+Some useful postfix commands
+
+postqueue -p = mailq    //postqueue -p is the same as mailq
+
+service postfix reload    //reload config
+service postfix restart   //restart postfix server
+
+postconf  mail_version      //View the postfix version
+postconf -d     //Show default postfix values
+postconf -n     //Show non default postfix values
+
+mailq     //list mail queue and MAIL_ID's, list mail queue
+postqueue -p //list mail queue and MAIL_ID's, list mail queue
+postfix  flush   // flush mail queue
+postqueue -f    //process the queue now
+postcat -q MAIL_ID     //read email from mail queue
+
+postsuper -d MAIL_ID       //To remove MAIL_ID mail from the queue
+postsuper -d ALL       //To remove all mail from the queue
+postsuper -d ALL deferred        //To remove all mails in the deferred queue
+
+postqueue -p | awk '/^[0-9,A-F]/ {print $7}' | sort | uniq -c | sort -n           //sort and count emails by "from address"
+
+postqueue -p | grep '^[A-Z0-9]'|grep user@adminlogs.info|cut -f1 -d' ' |tr -d \*|postsuper -d -          //removing all emails sent by: user@adminlogs.info
+
+postqueue -p | awk '/^[0-9,A-F].*user@adminlogs.info / {print $1}' | cut -d '!' -f 1 | postsuper -d -      //remove all email sent from user@adminlogs.info
+
+To delete all messages from the queue by a certain user:
+for i in `postqueue -p | grep user@domain.com | awk '{print $1}' | grep -v host | grep -v \*`; do postsuper -d $i; done
+
+postqueue -p | grep '^[A-Z0-9]'|grep @adminlogs.info|cut -f1 -d' ' |tr -d \*|postsuper -d -      //remove all email sent by domain adminlogs.info
+
+
+postqueue -p | tail -n 1   //Mail queue stats short
+postqueue -p | grep -c "^[A-Z0-9]"    //number of emails in Mail queue
+
+tail -f /var/log/maillog    //watch logs live
