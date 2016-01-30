@@ -1,7 +1,20 @@
-man 7 sem_overview 
-man 7 shm_overview 
-man 7 boot
-man 7 attr
+man 7 sem_overview :
+#Overview of POSIX semaphores. POSIX semaphores allow processes and threads to synchronize their actions.
+
+man 7 shm_overview :
+#shm_overview - overview of POSIX shared memory. The POSIX shared memory API allows processes to communicate information by sharing a region of memory.
+
+man 7 boot :
+#boot-scripts - general description of boot sequence. The  boot  sequence  varies  in  details  among  systems but can be roughly divided to the following steps: 
+(i) hardware boot
+(ii) operating system (OS) loader
+(iii) kernel startup
+(iv) init and inittab
+(v) boot scripts.
+
+man 7 attr :
+#
+
 man 7 bootup
 man 7 credentials
 man 7 daemon
