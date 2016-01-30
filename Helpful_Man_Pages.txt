@@ -7,4 +7,15 @@ man 7 credentials
 man 7 daemon
 man 7 hier
 man 7 hostname
+man 7 libc
+man 7 lvmcache
+man 7 lvmthin
+man 7 path_resolution
+man 7 pipe
+man 7 fifo
+man 7 pthreads
+man 7 pty
+man 7 regex
+man 7 runlevel
+man 7 signal
 
