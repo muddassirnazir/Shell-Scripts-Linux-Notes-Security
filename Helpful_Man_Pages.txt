@@ -18,4 +18,17 @@ man 7 pty
 man 7 regex
 man 7 runlevel
 man 7 signal
+man 7 started
+man 7 starting
+man 7 stopped 
+man 7 stopping
+man 7 suffixes
+man 7 symlink
+man 7 time
+man 7 udev
+man 7 units
+man 7 upstart
+man 7 uri
+man 7 url
+man 7 urn
 
