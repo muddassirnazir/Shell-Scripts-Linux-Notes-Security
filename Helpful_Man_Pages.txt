@@ -2,46 +2,89 @@ man 7 sem_overview :
 #Overview of POSIX semaphores. POSIX semaphores allow processes and threads to synchronize their actions.
 
 man 7 shm_overview :
-#shm_overview - overview of POSIX shared memory. The POSIX shared memory API allows processes to communicate information by sharing a region of memory.
+#shm_overview - overview of POSIX shared memory. The POSIX shared memory API allows processes to communicate information
+#by sharing a region of memory.
 
 man 7 boot :
-#boot-scripts - general description of boot sequence. The  boot  sequence  varies  in  details  among  systems but can be roughly divided to the following steps: 
-(i) hardware boot
-(ii) operating system (OS) loader
-(iii) kernel startup
-(iv) init and inittab
-(v) boot scripts.
+#boot-scripts - general description of boot sequence. The  boot  sequence  varies  in  details  among  systems but can be
+#roughly divided to the following steps:
+#(i) hardware boot
+#(ii) operating system (OS) loader
+#(iii) kernel startup
+#(iv) init and inittab
+#(v) boot scripts.
 
-man 7 attr :
-#
+man 7 credentials :
+#credentials - process identifiers
 
-man 7 bootup
-man 7 credentials
-man 7 daemon
-man 7 hier
-man 7 hostname
-man 7 libc
-man 7 lvmcache
-man 7 lvmthin
-man 7 path_resolution
-man 7 pipe
-man 7 fifo
-man 7 pthreads
-man 7 pty
-man 7 regex
-man 7 runlevel
-man 7 signal
-man 7 started
-man 7 starting
-man 7 stopped 
-man 7 stopping
-man 7 suffixes
-man 7 symlink
-man 7 time
-man 7 udev
-man 7 units
-man 7 upstart
-man 7 uri
-man 7 url
-man 7 urn
+man 7 hier :
+#hier - description of the filesystem hierarchy
 
+man 7 hostname :
+#hostname - hostname resolution description
+
+man 7 libc :
+#libc - overview of standard C libraries on Linux
+
+man 7 path_resolution :
+#path_resolution - how a pathname is resolved to a file
+
+man 7 pipe :
+#pipe - overview of pipes and FIFOs
+
+man 7 fifo :
+##fifo - first-in first-out special file, named pipe
+
+man 7 pthreads :
+#pthreads - POSIX threads
+
+man 7 pty :
+#pty - pseudoterminal interfaces
+
+man 7 regex :
+#regex - POSIX.2 regular expressions
+
+man 7 runlevel :
+#runlevel - event signalling change of system runlevel
+
+man 7 signal :
+#signal - overview of signals
+
+man 7 started :
+#started - event signalling that a job is running
+
+man 7 starting :
+#starting - event signalling that a job is starting
+
+man 7 stopped :
+#stopped - event signalling that a job has stopped
+
+man 7 stopping :
+#topping - event signalling that a job is stopping
+
+man 7 suffixes :
+#suffixes - list of file suffixes
+
+man 7 symlink :
+#symlink - symbolic link handling
+
+man 7 time :
+#time - overview of time and timers
+
+man 7 udev :
+#dev - Linux dynamic device management
+
+man 7 units :
+#units, kilo, kibi, mega, mebi, giga, gibi - decimal and binary prefixes
+
+man 7 upstart :
+#init - Upstart process management daemon
+
+man 7 uri :
+#uri, url, urn - uniform resource identifier (URI), including a URL or URN
+
+man 7 url :
+#uri, url, urn - uniform resource identifier (URI), including a URL or URN
+
+man 7 urn :
+##uri, url, urn - uniform resource identifier (URI), including a URL or URN
