@@ -87,4 +87,4 @@ man 7 url :
 #uri, url, urn - uniform resource identifier (URI), including a URL or URN
 
 man 7 urn :
-##uri, url, urn - uniform resource identifier (URI), including a URL or URN
+#uri, url, urn - uniform resource identifier (URI), including a URL or URN
