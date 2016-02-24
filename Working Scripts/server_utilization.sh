@@ -12,8 +12,8 @@
     df -h | xargs | awk '{print "Free/total disk: " $11 " / " $9}'
     free -m | xargs | awk '{print "Free/total memory: " $17 " / " $8 " MB"}'
     echo "--------------------"
-    start_log=`head -1 /var/log/messages |cut -c 1-12`
-    oom=`grep -ci kill /var/log/messages`
+    start_log=`head -1 /var/log/syslog |cut -c 1-12`
+    oom=`grep -ci kill /var/log/syslog`
     echo -n "OOM errors since $start_log :" $oom
     echo ""
     echo "--------------------"
