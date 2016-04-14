@@ -3,7 +3,7 @@
 
 2. The script file needs a execute permission in order to run.
 
-3. bash can run a script withoout a exec permission because there a command exec   utes not the file.
+3. bash can run a script without the exec permission because there a command executes not the file.
 
 4. Or to execute give the file's path or ./path
 
