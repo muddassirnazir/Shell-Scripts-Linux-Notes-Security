@@ -84,6 +84,7 @@ max_heap_table_size = 40M
 connect_timeout=10
 interactive_timeout=100
 wait_timeout=100
+--------------------------------------
 
 #cd /var/lib/mysql
 --------------------------------------
