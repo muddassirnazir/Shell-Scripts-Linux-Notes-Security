@@ -1,5 +1,3 @@
-===============================
-
 In Plesk:
 
 mysqldump -u admin -p`cat/etc/psa/.psa.shadow` psa > /root/psa_backup.sql
