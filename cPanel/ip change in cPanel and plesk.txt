@@ -2,7 +2,6 @@
 
 In Plesk:
 
-
 mysqldump -u admin -p`cat/etc/psa/.psa.shadow` psa > /root/psa_backup.sql
 
 /usr/local/psa/bin/reconfigurator.pl ipaddresses.map
@@ -19,7 +18,6 @@ eth0:192.168.50.70 255.255.255.0 -> eth0:<new ip> 255.255.255.0
 
 
 Change ip in network setting.
-
 
 =======================================
 In cPanel:
@@ -44,5 +42,3 @@ cat /var/cpanel/mainip.new |tr -d "\n" |tr -d "\r" > /var/cpanel/mainip
 for i in `cat /etc/trueuserdomains | cut -d: -f1` ;do replace "<old_server_ip>" "<new_server_ip>" -- /var/named/$i.db ;done;
 
 ================================
-
-
