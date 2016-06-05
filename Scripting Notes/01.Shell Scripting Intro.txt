@@ -1,23 +1,24 @@
-1. Scripts always run a new subshell.
-   Script within script also runs within a new subshell of subshell.
+1. Scripts always run a new sub-shell.
+   Script within script also runs within a new sub-shell of sub-shell.
 
 2. The script file needs a execute permission in order to run.
 
-3. bash can run a script withoout a exec permission because there a command exec   utes not the file.
+3. bash/sh command can run a script without a execute permission because there
+   a command executes not the file.
 
-4. Or to execute give the file's path or ./path
+4. To execute a file give the file's path or ./path (execute permission is required).
 
-5. To give a execute permission we do : chmod u+x to give exec power to user. 
-   Never user chmod +x for a file. It will leave a security vulnerability as every user will have the exec permission. So we only assign exec permission to the owner of the file and not to group or other users. 
+5. To give a execute permission we do : chmod u+x to give exec power to user.
+   Never user chmod +x for a file. It will leave a security vulnerability as
+   every user will have the exec permission. So we only assign exec permission
+   to the owner of the file and not to group or other users.
 
 6. shebang : At the start of the file we define a shebang like :
              #!/bin/bash for bash interpreter.
-             #!/usr/bin/env python for python  
+             #!/usr/bin/env python for python
 
-7. #mkdir "New Folder" and #mkdir New Folder 
+7. #mkdir "New Folder" and #mkdir New Folder
 
+8. /n for newline or /t for tab won't work until echo -e
 
-8. /n for newline or /t for tab won't work untill echo -e
-
-9.cd /etc/profile.d - List of open files for the bash shell
-
+9. cd /etc/profile.d - List of open files for the bash shell.

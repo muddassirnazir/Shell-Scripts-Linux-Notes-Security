@@ -48,7 +48,7 @@ The SELinux context of the object (target) the process attempted to access. In t
 Note: the samba_share_t type is not accessible to processes running in the httpd_t domain.
 
 #From the system call (SYSCALL) message, two items are of interest:
-success=no: indicates whether the denial (AVC) was enforced or not. 
+success=no: indicates whether the denial (AVC) was enforced or not.
 success=no indicates the system call was not successful
 (SELinux denied access).
 
