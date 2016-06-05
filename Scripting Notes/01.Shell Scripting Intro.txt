@@ -3,15 +3,25 @@
 
 2. The script file needs a execute permission in order to run.
 
+<<<<<<< HEAD
 3. bash/sh command can run a script without a execute permission because there
    a command executes not the file.
+=======
+3. bash can run a script without the exec permission because there a command executes not the file.
+>>>>>>> origin/master
 
 4. To execute a file give the file's path or ./path (execute permission is required).
 
+<<<<<<< HEAD
 5. To give a execute permission we do : chmod u+x to give exec power to user.
    Never user chmod +x for a file. It will leave a security vulnerability as
    every user will have the exec permission. So we only assign exec permission
    to the owner of the file and not to group or other users.
+=======
+5. To give a execute permission we do : chmod u+x to give exec power to user. 
+   Never user chmod +x for a file. It will leave a security vulnerability as every user will have the exec permission. 
+   So we only assign exec permission to the owner of the file and not to group or other users.
+>>>>>>> origin/master
 
 6. shebang : At the start of the file we define a shebang like :
              #!/bin/bash for bash interpreter.

@@ -1,9 +1,9 @@
 1) Installing cPanel/WHM
 	
-	screen –S cpanel_install
+	screen â€“S cpanel_install
 	cd /home
-	yum –y update
-	wget –N http://httpupdate.cpanel.net/latest
+	yum â€“y update
+	wget â€“N http://httpupdate.cpanel.net/latest
 	sh latest
 
 2) Install CSF firewall
@@ -20,7 +20,7 @@
 	chmod 755 install.sh
 	./install.sh
 
-4) Install Rootkit
+4) Install Rootkit Hunter
 
 	wget http://downloads.sourceforge.net/project/rkhunter/rkhunter/1.4.2/rkhunter-1.4.2.tar.gz
 	tar -zxvf rkhunter-1.2.7.tar.gz
@@ -41,13 +41,13 @@
 	sh install.sh
 	grep "quar_hits=0" /usr/local/maldetect/conf.maldet |  xargs -I {}  replace {} "quar_hits=1" -- /usr/local/maldetect/conf.maldet
 	vi /usr/local/maldetect/conf.maldet	## Configure LMD	
-		o	email_alert : If you would like to receive email alerts, then it should be set to 1.
-		o	email_subj : Set your email subject here.
-		o	email_addr : Add your email address to receive malware alerts.
-		o	quar_hits : The default quarantine action for malware hits, it should be set 1.
-		o	quar_clean : Cleaing detected malware injections, must set to 1.
-		o	quar_susp : The default suspend action for users wih hits, set it as per your requirements.
-		o	quar_susp_minuid : Minimum userid that can be suspended.
+		email_alert : If you would like to receive email alerts, then it should be set to 1.
+		email_subj : Set your email subject here.
+		email_addr : Add your email address to receive malware alerts.
+		quar_hits : The default quarantine action for malware hits, it should be set 1.
+		quar_clean : Cleaing detected malware injections, must set to 1.
+		quar_susp : The default suspend action for users wih hits, set it as per your requirements.
+		quar_susp_minuid : Minimum userid that can be suspended.
 
 6) Enable Root Login alerts
 	
@@ -67,9 +67,8 @@ download mysqltunner from link: https://github.com/major/MySQLTuner-perl
 
 
 my.cnf conf for 1-2 GB RAM
-
+--------------------------------------
 [mysqld]
-
 local-infile=0
 log-slow-queries=/var/lib/mysql/slow.log
 max_connections = 250
@@ -85,13 +84,11 @@ max_heap_table_size = 40M
 connect_timeout=10
 interactive_timeout=100
 wait_timeout=100
+--------------------------------------
 
-cd /var/lib/mysql
+#cd /var/lib/mysql
+--------------------------------------
 touch slow.log
 chown mysql:mysql slow.log
 chmod 660 slow.log
-
-
-
-
-
+--------------------------------------
