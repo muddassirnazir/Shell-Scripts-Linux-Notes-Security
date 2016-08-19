@@ -19,6 +19,3 @@ else
     echo "User $user is not present"
     exit 1
 fi
-
-
-
